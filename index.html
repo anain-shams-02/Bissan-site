@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,8 +107,7 @@
       list-style: none;
     }
 
-    button,
-    .btn {
+    button, .btn {
       background: #ffb3c6;
       border: none;
       border-radius: 60px;
@@ -130,8 +128,7 @@
       text-decoration: none;
     }
 
-    button:active,
-    .btn:active {
+    button:active, .btn:active {
       transform: translateY(5px);
       box-shadow: 0 3px 0 #e08fa8, 0 6px 16px rgba(230, 120, 150, 0.3);
     }
@@ -156,14 +153,6 @@
       object-fit: cover;
     }
 
-    .cat-caption {
-      font-size: 0.85rem;
-      color: #ab5e7a;
-      margin-top: -0.3rem;
-      margin-bottom: 0.8rem;
-      font-style: italic;
-    }
-
     .grid-3 {
       display: flex;
       flex-direction: column;
@@ -181,27 +170,19 @@
       border-radius: 4px;
     }
 
-    .hidden {
-      display: none;
-    }
-
     /* Responsive */
     @media (max-width: 500px) {
       .container {
         padding: 1.5rem 1rem;
         border-radius: 40px;
       }
-
       h1 {
         font-size: 1.8rem;
       }
-
       h2 {
         font-size: 1.5rem;
       }
-
-      button,
-      .btn {
+      button, .btn {
         min-width: 160px;
         padding: 0.8rem 1rem;
         font-size: 1rem;
@@ -209,14 +190,10 @@
     }
   </style>
 </head>
-
 <body>
-  <div class="container" id="app">
-    <!-- all pages will be injected here -->
-  </div>
+  <div class="container" id="app"></div>
 
   <script>
-    // ----- helper to load cat images from online (free, cute) -----
     const catImages = {
       welcome: "https://cataas.com/cat/cute?width=400&height=300&t=welcome",
       morning: "https://cataas.com/cat/cute?width=400&height=300&t=morning",
@@ -228,10 +205,9 @@
       pickup3: "https://cataas.com/cat/cute?width=300&height=200&t=pickup3"
     };
 
-    // ----- PAGE DEFINITIONS -----
     const pages = {};
 
-    // ---------- PAGE 0: WELCOME ----------
+    // ---------- WELCOME ----------
     pages.welcome = () => `
       <h1>Hello Ms. Abed 🌸</h1>
       <img src="${catImages.welcome}" alt="cute cat" class="cat-img" />
@@ -245,7 +221,7 @@
       <img src="https://cataas.com/cat/kitten?width=400&height=250" alt="kitten" class="cat-img" style="width:180px; margin-top:1rem;" />
     `;
 
-    // ---------- PAGE 1: MORNING (POEM ONLY - no HeHe button) ----------
+    // ---------- MORNING (poem only, no HeHe) ----------
     pages.morning = () => `
       <h2>Buongiorno Gorgeous ☀️</h2>
       <img src="${catImages.morning}" alt="cute morning cat" class="cat-img" />
@@ -266,7 +242,7 @@
       <img src="https://cataas.com/cat/cute?width=350&height=250&t=morning2" alt="another cute cat" class="cat-img" style="width:200px;" />
     `;
 
-    // ---------- PICKUP MORNING (has HeHe button) ----------
+    // ---------- PICKUP MORNING -> finalMorning ----------
     pages.pickupMorning = () => `
       <h2>Bad pickup lines 🌷</h2>
       <img src="${catImages.pickup1}" alt="funny cat" class="cat-img" style="width:200px;" />
@@ -277,10 +253,21 @@
         <li>Are you from the Himalayas? Cause I want to see your Ne-pples</li>
       </ul>
       <button class="btn-small" onclick="showPage('morning')">↩️ back</button>
-      <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
+      <button class="btn-small" onclick="showPage('finalMorning')" style="margin-left:10px;">HeHe now click me 😼</button>
     `;
 
-    // ---------- PAGE 2: NOON (POEM ONLY - no HeHe button) ----------
+    // ---------- NEW: FINAL MORNING ----------
+    pages.finalMorning = () => `
+      <h2>HeHe you clicked 😽</h2>
+      <img src="${catImages.sorry}" alt="cute cat" class="cat-img" />
+      <p style="text-align:left; background:#fff0f5; padding:1.2rem; border-radius:30px;">
+        Hello Ms. Abed, Good morning. fun fact, this page said something else till yesterday, all had the same apology. but more time so why not improve and give something original? You would get ready and leave i assume. Safe travels to you. do wake me up if i don't respond to when you coming messages please. last night we talked about how hot you are and boobs right ? Lets talk about you as a person now shall we. The kind hearted, still strong and badass of a woman underneath the physicality. You are a very fun person and I could spend days listening to you talk and you are funny and my god your death stare actually scares the shit out of me. But hey, you a complete package so should have everything right ? Safe travels, ill see you soon.
+      </p>
+      <img src="https://cataas.com/cat/kitten?width=350&height=250" alt="cute kitten" class="cat-img" style="width:200px;" />
+      <button class="btn-small" onclick="showPage('welcome')" style="margin-top:1rem;">🏠 back to start</button>
+    `;
+
+    // ---------- NOON (poem only, no HeHe) ----------
     pages.noon = () => `
       <h2>Hello Ms. Pretty 🌤️</h2>
       <img src="${catImages.noon}" alt="sleepy cat" class="cat-img" />
@@ -301,7 +288,7 @@
       <img src="https://cataas.com/cat/sleepy?width=350&height=250&t=noon2" alt="sleepy kitty" class="cat-img" style="width:200px;" />
     `;
 
-    // ---------- PICKUP NOON (has HeHe button) ----------
+    // ---------- PICKUP NOON -> finalNoon ----------
     pages.pickupNoon = () => `
       <h2>Bad pickup lines 🌻</h2>
       <img src="${catImages.pickup2}" alt="cute cat" class="cat-img" style="width:200px;" />
@@ -312,10 +299,21 @@
         <li>Are you from the Himalayas? Cause I want to see your Ne-pples.</li>
       </ul>
       <button class="btn-small" onclick="showPage('noon')">↩️ back</button>
-      <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
+      <button class="btn-small" onclick="showPage('finalNoon')" style="margin-left:10px;">HeHe now click me 😼</button>
     `;
 
-    // ---------- PAGE 3: NIGHT (POEM ONLY - no HeHe button) ----------
+    // ---------- NEW: FINAL NOON ----------
+    pages.finalNoon = () => `
+      <h2>HeHe you clicked 😽</h2>
+      <img src="${catImages.sorry}" alt="cute cat" class="cat-img" />
+      <p style="text-align:left; background:#fff0f5; padding:1.2rem; border-radius:30px;">
+        Hello Ms. Abed, Good afternoon/evening. fun fact, this page said something else till yesterday, all had the same apology. but more time so why not improve and give something original? I really hope by this time I have already met you, if not, wow its getting late. Now in this afternoon/evening lets talk about your freckles and your eyelashes. RIP to all the fallen freckles, ill never forget them. Ill swap your sunscreen with moisturizer beware. They are so pretty, imagine having the whole constellation on your face. kinda poetic how your face is as pretty as the whole universe with those freckles. and your eyelashes actually makes me think if you a man, you have manly eyelashes cause men have prettier eyelashes. like my god. they are like . fake grade good. Anyway, hope to see you soon, take care . or ill see you when I see you cause I already saw you.
+      </p>
+      <img src="https://cataas.com/cat/kitten?width=350&height=250" alt="cute kitten" class="cat-img" style="width:200px;" />
+      <button class="btn-small" onclick="showPage('welcome')" style="margin-top:1rem;">🏠 back to start</button>
+    `;
+
+    // ---------- NIGHT (poem only, no HeHe) ----------
     pages.night = () => `
       <h2>Hello Ms. Everyone-wants-apiece-of-Bissan 🌙</h2>
       <img src="${catImages.night}" alt="night cat" class="cat-img" />
@@ -336,7 +334,7 @@
       <img src="https://cataas.com/cat/cute?width=350&height=250&t=night2" alt="cute night cat" class="cat-img" style="width:200px;" />
     `;
 
-    // ---------- PICKUP NIGHT (has HeHe button) ----------
+    // ---------- PICKUP NIGHT -> original final ----------
     pages.pickupNight = () => `
       <h2>Bad pickup lines 🌙</h2>
       <img src="${catImages.pickup3}" alt="sleepy cat" class="cat-img" style="width:200px;" />
@@ -350,7 +348,7 @@
       <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
     `;
 
-    // ---------- FINAL PAGE (HeHe) ----------
+    // ---------- ORIGINAL FINAL (night) ----------
     pages.final = () => `
       <h2>HeHe you clicked 😽</h2>
       <img src="${catImages.sorry}" alt="sorry cat" class="cat-img" />
@@ -361,7 +359,6 @@
       <button class="btn-small" onclick="showPage('welcome')" style="margin-top:1rem;">🏠 back to start</button>
     `;
 
-    // ----- RENDER FUNCTION -----
     function showPage(pageName) {
       const app = document.getElementById('app');
       if (pages[pageName]) {
@@ -376,5 +373,4 @@
     showPage('welcome');
   </script>
 </body>
-
 </html>
