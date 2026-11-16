@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Ms. Abed 💕</title>
+  <style>
+    /* ---- CUTE THEME ---- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #fff5f9 0%, #ffe4ec 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #4a2c3a;
+    }
+
+    .container {
+      max-width: 750px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 60px 60px 40px 40px;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 25px 40px -10px rgba(231, 120, 150, 0.4);
+      border: 2px solid #ffccd9;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #b3416b;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.75rem;
+      text-shadow: 3px 3px 0 #ffe2eb;
+      word-break: break-word;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #c44f78;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #a13e62;
+      margin: 1.2rem 0 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 0.9rem;
+      color: #4f2e3c;
+    }
+
+    .poem {
+      background: #fff0f5;
+      padding: 1.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      border-left: 6px solid #f9a8c2;
+      border-right: 6px solid #f9a8c2;
+      margin: 1.2rem 0;
+      font-style: italic;
+      color: #6b3e52;
+      text-align: right;
+      direction: rtl;
+      unicode-bidi: embed;
+      font-family: 'Amiri', 'Traditional Arabic', 'Segoe UI', serif;
+    }
+
+    .pickup-lines {
+      background: #ffe9f1;
+      border-radius: 32px;
+      padding: 1.2rem 1rem;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .pickup-lines li {
+      list-style-type: '💋 ';
+      padding-left: 0.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      color: #592e42;
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button,
+    .btn {
+      background: #ffb3c6;
+      border: none;
+      border-radius: 60px;
+      padding: 0.9rem 1.8rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4a1f2e;
+      margin: 0.5rem 0.4rem;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #e08fa8, 0 6px 16px rgba(230, 120, 150, 0.3);
+      transition: all 0.1s ease;
+      border: 1px solid #ffeef4;
+      display: inline-block;
+      width: auto;
+      min-width: 200px;
+      letter-spacing: 0.3px;
+      font-family: inherit;
+      text-decoration: none;
+    }
+
+    button:active,
+    .btn:active {
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #e08fa8, 0 6px 16px rgba(230, 120, 150, 0.3);
+    }
+
+    .btn-small {
+      background: #ffd9e4;
+      box-shadow: 0 6px 0 #e6a0b8;
+      padding: 0.7rem 1.4rem;
+      font-size: 1rem;
+      min-width: unset;
+    }
+
+    .cat-img {
+      max-width: 100%;
+      width: 220px;
+      height: auto;
+      border-radius: 30px;
+      margin: 0.8rem auto;
+      display: block;
+      box-shadow: 0 10px 20px rgba(200, 100, 130, 0.25);
+      border: 3px solid white;
+      object-fit: cover;
+    }
+
+    .cat-caption {
+      font-size: 0.85rem;
+      color: #ab5e7a;
+      margin-top: -0.3rem;
+      margin-bottom: 0.8rem;
+      font-style: italic;
+    }
+
+    .grid-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .grid-3 button {
+      margin: 0.4rem 0;
+      width: 100%;
+    }
+
+    hr {
+      border: 2px dashed #f9b8cc;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.5rem 1rem;
+        border-radius: 40px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      button,
+      .btn {
+        min-width: 160px;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="app">
+    <!-- all pages will be injected here -->
+  </div>
+
+  <script>
+    // ----- helper to load cat images from online (free, cute) -----
+    const catImages = {
+      welcome: "https://cataas.com/cat/cute?width=400&height=300&t=welcome",
+      morning: "https://cataas.com/cat/cute?width=400&height=300&t=morning",
+      noon: "https://cataas.com/cat/sleepy?width=400&height=300&t=noon",
+      night: "https://cataas.com/cat/sleepy?width=400&height=300&t=night",
+      sorry: "https://cataas.com/cat/cute?width=400&height=300&t=sorry",
+      pickup1: "https://cataas.com/cat/cute?width=300&height=200&t=pickup1",
+      pickup2: "https://cataas.com/cat/cute?width=300&height=200&t=pickup2",
+      pickup3: "https://cataas.com/cat/cute?width=300&height=200&t=pickup3"
+    };
+
+    // ----- PAGE DEFINITIONS -----
+    const pages = {};
+
+    // ---------- PAGE 0: WELCOME ----------
+    pages.welcome = () => `
+      <h1>Hello Ms. Abed 🌸</h1>
+      <img src="${catImages.welcome}" alt="cute cat" class="cat-img" />
+      <p style="font-size:1.1rem;">since you did not fall asleep in my arms, I have no idea when will you open this website, which is sad buttttt, you can tell me.</p>
+      <hr />
+      <div class="grid-3">
+        <button onclick="showPage('morning')">🌅 Early in the morning with the most gorgeous face to wake up with, Buongiorno</button>
+        <button onclick="showPage('noon')">☀️ Just tired and remembered Anain sent a website out of the blue in the middle of the day.</button>
+        <button onclick="showPage('night')">🌙 About to fall asleep, in god knows how, but looking so fucking hot. I might be strong enough to be a green lantern</button>
+      </div>
+      <img src="https://cataas.com/cat/kitten?width=400&height=250" alt="kitten" class="cat-img" style="width:180px; margin-top:1rem;" />
+    `;
+
+    // ---------- PAGE 1: MORNING (POEM ONLY - no HeHe button) ----------
+    pages.morning = () => `
+      <h2>Buongiorno Gorgeous ☀️</h2>
+      <img src="${catImages.morning}" alt="cute morning cat" class="cat-img" />
+      <p style="font-weight:500;">Here is a poem for you</p>
+      <div class="poem">
+        عَذْبَةٌ أَنْتِ كَالطُّفُولَةِ، كَالأَحْـ<br>
+        ـلامِ، كَاللَّحْنِ، كَالصَّبَاحِ الْجَدِيدِ<br><br>
+        كَالسَّمَاءِ الضَّحُوكِ، كَاللَّيْلَةِ الْقَمَـ<br>
+        ـرَاءِ، كَالْوَرْدِ، كَابْتِسَامِ الْوَلِيدِ<br><br>
+        يَا لَهَا مِنْ وَدَاعَةٍ وَجَمَالٍ<br>
+        وَشَبَابٍ مُنَعَّمٍ أُمْلُودِ<br><br>
+        أَنْتِ مَا أَنْتِ؟ أَنْتِ فَجْرٌ مِنَ السِّحْـ<br>
+        ـرِ تَجَلَّى لِقَلْبِيَ الْمَعْمُودِ
+      </div>
+      <p>Now some very bad pickup lines, like very bad ones 😏</p>
+      <button class="btn-small" onclick="showPage('pickupMorning')">💌 pickup lines</button>
+      <br>
+      <img src="https://cataas.com/cat/cute?width=350&height=250&t=morning2" alt="another cute cat" class="cat-img" style="width:200px;" />
+    `;
+
+    // ---------- PICKUP MORNING (has HeHe button) ----------
+    pages.pickupMorning = () => `
+      <h2>Bad pickup lines 🌷</h2>
+      <img src="${catImages.pickup1}" alt="funny cat" class="cat-img" style="width:200px;" />
+      <ul class="pickup-lines">
+        <li>Are you the reason my alarm went off? Because you’ve been in my head since last night</li>
+        <li>Good morning. I’d offer you coffee, but I think you’re already the reason my heart is racing</li>
+        <li>Did you just wake up or did you wake me up by existing?</li>
+        <li>Are you from the Himalayas? Cause I want to see your Ne-pples</li>
+      </ul>
+      <button class="btn-small" onclick="showPage('morning')">↩️ back</button>
+      <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
+    `;
+
+    // ---------- PAGE 2: NOON (POEM ONLY - no HeHe button) ----------
+    pages.noon = () => `
+      <h2>Hello Ms. Pretty 🌤️</h2>
+      <img src="${catImages.noon}" alt="sleepy cat" class="cat-img" />
+      <p>Must be tired being pretty all day. Here is a poem for you</p>
+      <div class="poem">
+        أَتُرَاكِ الْتَفَتِّ نَحْوِيَ ظُهْراً<br>
+        فَبَعَثْتِ النَّسِيمَ نَحْوَ فُؤَادِي؟<br><br>
+        لَوْ تَرَيْنَ الْخَيَالَ، طَيْفُكِ عِنْدِي<br>
+        مُنْذُ فَجْرِ الصَّبَاحِ دُونَ ابْتِعَادِ<br><br>
+        عَذْبَةٌ أَنْتِ كَالنَّسِيمِ بِظُهْرٍ<br>
+        أَوْ كَلَحْنٍ يَرِقُّ دُونَ نَفَادِ<br><br>
+        حَسْبِيَ الْآنَ أَنْ أَرَاكِ بِفِكْرِي<br>
+        فَيَطِيبُ النَّهَارُ رَغْمَ الْبِعَادِ
+      </div>
+      <p>Now some very bad pickup lines, like very bad ones 😏</p>
+      <button class="btn-small" onclick="showPage('pickupNoon')">💌 pickup lines</button>
+      <br>
+      <img src="https://cataas.com/cat/sleepy?width=350&height=250&t=noon2" alt="sleepy kitty" class="cat-img" style="width:200px;" />
+    `;
+
+    // ---------- PICKUP NOON (has HeHe button) ----------
+    pages.pickupNoon = () => `
+      <h2>Bad pickup lines 🌻</h2>
+      <img src="${catImages.pickup2}" alt="cute cat" class="cat-img" style="width:200px;" />
+      <ul class="pickup-lines">
+        <li>Are you a parking ticket? Because you’ve got ‘fine’ written all over you… and I’d pay to get towed</li>
+        <li>Do you have a map? I keep getting lost in your eyes… and also in the idea of you sitting on my face</li>
+        <li>Do you like raisins? How about a date… and then I raise something else.</li>
+        <li>Are you from the Himalayas? Cause I want to see your Ne-pples.</li>
+      </ul>
+      <button class="btn-small" onclick="showPage('noon')">↩️ back</button>
+      <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
+    `;
+
+    // ---------- PAGE 3: NIGHT (POEM ONLY - no HeHe button) ----------
+    pages.night = () => `
+      <h2>Hello Ms. Everyone-wants-apiece-of-Bissan 🌙</h2>
+      <img src="${catImages.night}" alt="night cat" class="cat-img" />
+      <p>Can't blame now can I? I mean you are the dream blind people long to see. anyway here is a poem for you.</p>
+      <div class="poem">
+        هَدَأَ اللَّيْلُ وَاسْتَرَاحَ الْوُجُودُ<br>
+        وَسَرَى طَيْفُكِ الْجَمِيلُ أَمَامِي<br><br>
+        عَذْبَةٌ أَنْتِ كَالنَّسِيمِ بِلَيْلٍ<br>
+        أَوْ كَبَدْرٍ يَشِعُّ لِي بِالظَّلَامِ<br><br>
+        لَيْتَ عَيْنَيْكِ تَغْفُوَانِ بِخَيْرٍ<br>
+        وَيُوَافِيكِ فِي السُّكُونِ سَلَامِي<br><br>
+        حَسْبِيَ الْآنَ أَنْ أَنَامَ قَرِيراً<br>
+        إِنْ تَرَاءَيْتِ فِي هُدُوءِ مَنَامِي
+      </div>
+      <p>Now some very bad pickup lines, like very bad ones 😏</p>
+      <button class="btn-small" onclick="showPage('pickupNight')">💌 pickup lines</button>
+      <br>
+      <img src="https://cataas.com/cat/cute?width=350&height=250&t=night2" alt="cute night cat" class="cat-img" style="width:200px;" />
+    `;
+
+    // ---------- PICKUP NIGHT (has HeHe button) ----------
+    pages.pickupNight = () => `
+      <h2>Bad pickup lines 🌙</h2>
+      <img src="${catImages.pickup3}" alt="sleepy cat" class="cat-img" style="width:200px;" />
+      <ul class="pickup-lines">
+        <li>I’m going to bed now. Feel free to join… even if it’s just in my head</li>
+        <li>Goodnight. I’m about to close my eyes and imagine you making it hard to sleep</li>
+        <li>Goodnight. Dream of me… preferably the version where you don’t let me sleep</li>
+        <li>Are you from the Himalayas? Cause I want to see your Ne-pples.</li>
+      </ul>
+      <button class="btn-small" onclick="showPage('night')">↩️ back</button>
+      <button class="btn-small" onclick="showPage('final')" style="margin-left:10px;">HeHe now click me 😼</button>
+    `;
+
+    // ---------- FINAL PAGE (HeHe) ----------
+    pages.final = () => `
+      <h2>HeHe you clicked 😽</h2>
+      <img src="${catImages.sorry}" alt="sorry cat" class="cat-img" />
+      <p style="text-align:left; background:#fff0f5; padding:1.2rem; border-radius:30px;">
+        I am sorry I was rude to you. I promise it was not my intention. But I really hope these things made your day maybe a tad bit better like 5 percent, and you got a smirk. That's enough for me. small goals. Bigger ones are your boobs. okay ill be serious. Like how tf are you like so hot and have great boobs? did god finish his all Arab beauty budget on you? okay ill move on. anyway, take care, know am always here to talk about things, I know some topics may hurt me a bit and maybe wierd for you to talk, but if it does make you feel better, I will listen and console you. afterall you are far more important. I hope you have a great sleep, or a pleasant morning or a safe travels. I do miss you. Take care. Ill see you soon.
+      </p>
+      <img src="https://cataas.com/cat/kitten?width=350&height=250" alt="cute kitten" class="cat-img" style="width:200px;" />
+      <button class="btn-small" onclick="showPage('welcome')" style="margin-top:1rem;">🏠 back to start</button>
+    `;
+
+    // ----- RENDER FUNCTION -----
+    function showPage(pageName) {
+      const app = document.getElementById('app');
+      if (pages[pageName]) {
+        app.innerHTML = pages[pageName]();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        app.innerHTML = `<h2>Page not found 😿</h2><button onclick="showPage('welcome')">Go home</button>`;
+      }
+    }
+
+    window.showPage = showPage;
+    showPage('welcome');
+  </script>
+</body>
+
+</html>
